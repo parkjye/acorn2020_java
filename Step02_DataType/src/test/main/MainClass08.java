@@ -2,17 +2,20 @@ package test.main;
 
 public class MainClass08 {
 	public static void main(String[] args) {
-		//String type 의 메소드 사용해 보기 
-		String str="abcde12345";
-		//문자열의 길이
-		int size=str.length();
-		//5 번째 인덱스의 문자1개(char)
-		char ch=str.charAt(5);
-		//소문자를 모두 대문자로 변환한 문자열 얻어내기 
-		String result=str.toUpperCase();
-	}
+		//String Type
+		String str="abcdefg123456";
+		
+		//문자열의 길이, 각 리턴해주는 type이 상이함.
+		
+		str.length(); //int type으로 바뀜
+		int size = str.length();
+		
+		str.charAt(5); //char로 바뀜(5번째 인덱스의 문자 1개(char)
+		char ch = str.charAt(5);
+		
+		//소문자를 대문자로 변경하는 문자열 얻어내기
+		String result = str.toUpperCase();
+		
+		// .method(); 
+		}
 }
-
-
-
-

@@ -36,7 +36,7 @@ public class MyObject {
 	
 	//Car type을 리턴해주는 메소드
 	public Car getCar() {
-		Car  c1 = new Car();
+		Car c1 = new Car();
 		return c1;
 	}
 	

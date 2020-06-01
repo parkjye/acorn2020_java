@@ -1,45 +1,31 @@
 package test.mypac;
 
 public class PlayMusic {
-	public void getName(String name) {
-		System.out.println("name: "+name);
+
+	public void openApp(String str) {
+		System.out.println(str+" Opened Music Application.");
 	}
 	
-	public void useCom(int n, Speaker s) {
-		System.out.println("호출");
-	}
-	
-	public void getCar(Car c) {
-		System.out.println("getCar 호출");
-	}
-	
-	///////////////////////
-	
-	public void startM(String str) {
-		System.out.println("StartM() 호출");
-	}	
-	
-	public void endM(int num, String str) {
-		System.out.println("endM----끝----");
-		
-	}
-	
-	////////////////////////
-	
-	public void setList(String sl) {
-		System.out.println("setList 호출");
-	}
-	
-	public void repeatList(int num) {
-		System.out.println("repeat List");
-	}
-	
-	public PlayMusicList PML() {
+	public PlayMusicList findList() { 
+		//PlayMusicList타입, findList함수명, PlayMusicList함수 리턴
 		return new PlayMusicList();
 	}
 	
-	public void stopList(PlayMusicList PML, int num, String str) {
-		System.out.println("==========stop=========");
+	public PlayMusicList02 findList2(String str){
+		return new PlayMusicList02(str);
 	}
 	
+	// 키보드 입력 받아서 한곡 / 랜덤 플레이 함수 호출
+	
+	public void repeatList(int num) {
+		System.out.println(num+"번은 한 곡 반복");
+	}
+	
+	public void randomList(int num) {
+		System.out.println(num+"번은 랜덤 Play");
+	}
+	
+	public void closeApp() {
+		System.out.println("Closed Music Application.");
+	}
 }

@@ -1,6 +1,7 @@
 package test.main;
 
 import test.mypac.*;
+import java.util.Scanner;
 
 public class MainClass05 {
 	/*
@@ -10,19 +11,37 @@ public class MainClass05 {
 	 * */
 	public static void main(String[] args) {
 		
-		PlayMusic p1 = new PlayMusic();
+		PlayMusic PM = new PlayMusic();
+		PlayMusicList PML = new PlayMusicList();
 		
-		p1.getName("김구라");
-		p1.useCom(4, new Speaker());
-		p1.getCar(new Car());
+		PM.openApp("'시작'");
 		
-		p1.startM("Start");
-		p1.endM(44, "End");
+		//PlayMusicList 함수 안에 findML 함수 호출
+		PM.findList().findML("박지예");
 		
-		////////////////////////
+		//PlayMusicList02 함수안에 생성자로 호출
+		PM.findList2("지예");
 		
-		PlayMusic pm1 = new PlayMusic();
+		//키보드 입력 받기
+		Scanner scan = new Scanner(System.in);
+		System.out.println("한곡반복은 1번, 랜덤플레이는 2번");
+		int getNum = scan.nextInt();
 		
+		if(getNum==1) {
+			PM.repeatList(1);
+		}else if(getNum==2){
+			PM.randomList(2);
+		}else {
+			System.out.println("왜 다른걸 누르셨어요...");
+//			return;
+		}
 		
+		Scanner scan2 = new Scanner(System.in);
+		System.out.println("close 입력");
+		String getStr = scan2.next();
+
+		if(getStr.equals("close")) {
+			PM.closeApp();
+		}	
 	}	
 }

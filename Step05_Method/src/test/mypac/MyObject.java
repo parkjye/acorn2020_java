@@ -56,4 +56,23 @@ public class MyObject {
 		car.drive();
 	}
 	
+	//String type과 Car type을 메소드의 인자로 전달받는 메소드
+	public void useSome(String name, Car car) {
+		System.out.println("name: "+name);
+		car.drive();
+	}
+	
+	public void doSome(Radio r, Speaker s) {
+		System.out.println("doSome() 메소드가 호출되었습니다.");
+	}
+	
+	public Radio getRadio() {
+		return new Radio();
+	}
+	
+	public Speaker getSpeaker() {
+		return new Speaker();
+	}
+	
+
 }

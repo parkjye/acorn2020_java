@@ -1,15 +1,6 @@
 package test.mypac;
 
 public class MyUtil {
-<<<<<<< HEAD
-	//static 필드
-	public static String version;
-	
-	//static 메소드
-	public static void send() {
-		System.out.println("전송 합니다.");
-=======
-	
 	/*
 	 * 필드(field), Method(메소드)
 	 * 
@@ -25,6 +16,5 @@ public class MyUtil {
 	//1. static method
 	public static void send() {
 		System.out.println("전송합니다.");
->>>>>>> refs/heads/study
 	}
 }

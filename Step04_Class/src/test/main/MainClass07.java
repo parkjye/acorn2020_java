@@ -1,6 +1,6 @@
 package test.main;
 
-import test.mypac.*;
+import test.mypac.Marine;
 
 public class MainClass07 {
 	public static void main(String[] args) {

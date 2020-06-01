@@ -1,6 +1,10 @@
 package test.main;
 
-import test.mypac.Car;
+/*
+ * JAVA '기본 data type은 value가 들어있다.
+ * */
+
+import test.mypac.Car; //패키지가 다르면 import해야함
 
 public class MainClass01 {
 	// run했을 때 실행 순서가 시작되는 특별한 main() 메소드
@@ -25,8 +29,7 @@ public class MainClass01 {
 		 * */
 		Car car2 = new Car();
 		car2.drive();
-		car2.name="벤틀리";
-		
+		car2.name="벤틀리";	
 		
 	}
 }

@@ -8,6 +8,7 @@ import test.mypac.YourUtil;
  * heap 객체 / Stack 지역변수 / Static (field or Method)
  * 
  * Static
+ * -**클래스 정보가 올라감
  * -필드, 메소드
  * -클래스명으로 구분
  * -클래스당 하나(single)만 만들어짐
@@ -15,11 +16,11 @@ import test.mypac.YourUtil;
  * -선언하면 모든 곳에서 공유하는 resource 개념
  * 
  * Stack
- * -지역변수
+ * -**지역변수
  * 	-ex. car1, car2
  * 
  * heap
- * -객체
+ * -**객체
  * -여러개의 객체가 만들어짐
  * -사용하지 않는 객체는 GC처리
  * 

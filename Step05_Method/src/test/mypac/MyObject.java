@@ -1,4 +1,4 @@
-package test.mypac;
+
 /*
  * [ 메소드를 만들 때 고려해야하는 것 ]
  * 
@@ -8,6 +8,8 @@ package test.mypac;
  *	4. 메소드에 전달하는 인자의 갯수와 데이터 type, ()
  * 
  * */
+
+package test.mypac;
 public class MyObject {
 	/*
 	 * public => 이 메소드는 어디에서든 접근 가능하다

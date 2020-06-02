@@ -5,7 +5,6 @@ public class MainClass04 {
 	public static void main(String[] args) {
 		/*
 		 * Q1. 프로그래밍의 목적: 무작위 정수를 얻어서 콘솔창에 출력.
-		 * 
 		 * */
 		
 		//Random객체를 생성해서 참조값을 지역변수에 담기

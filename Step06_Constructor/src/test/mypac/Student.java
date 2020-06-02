@@ -13,7 +13,7 @@ package test.mypac;
 
 public class Student {
 	
-	//생성자
+	//생성자: 객체가 호출될 때 실행 new Student();
 	public Student() {
 		System.out.println("Student 클래스의 생성자 호출됨!_!");
 	}

@@ -8,5 +8,7 @@ public class MainClass01 {
 		Student s1 = new Student();
 		Student s2 = new Student();
 		
+		s1.study();
+		s1.goSchool();
 	}
 }

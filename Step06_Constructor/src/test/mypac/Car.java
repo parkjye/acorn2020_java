@@ -12,6 +12,6 @@ public class Car {
 	
 	//메소드
 	public void drive() {
-		System.out.println(name+" 이(가) 달려요");
+		System.out.println(name+"이(가) 달려요");
 	}
 }

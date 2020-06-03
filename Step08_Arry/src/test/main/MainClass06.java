@@ -1,6 +1,5 @@
 package test.main;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class MainClass06 {
@@ -25,36 +24,15 @@ public class MainClass06 {
 		
 		for(int j=0; j<arrStr.length; j++) {
 			System.out.print(arrStr[j]+" ");
-				if(j==4) { //마지막 개행
+				if(j==arrStr.length-1) { //마지막 개행
 					System.out.println();
 				}
 		}
 		
-		/*
-		 * Q2.
-		 * Random 객체를 이용해서 로또 번호를 6개 얻어내서 배열에 저장한다.
-		 * 모두 다 저장이 되면 for문을 이용해서 배열에 저장된 모든 번호를
-		 * 콘솔창에 순서대로 출력한다.		
+		/* Resource leak: 'scan' is never closed
+		 * 스캐너객체 사용하고 close해줘야함 리소스 누수
 		 * */
-		
-		int[] getLotto = new int[6];
-		Random rNum = new Random();
-		
-		for(int x=0; x<getLotto.length; x++) {	
-			getLotto[x] = rNum.nextInt(45)+1;
-			
-			for(int y=0; y<x; y++) { //랜덤 숫자 중복제거
-				if(getLotto[x]==getLotto[y]) {
-					x--;
-				}
-			} //랜덤숫자 중복제거 ----끝
-		}
-		
-		System.out.print("Lotto 번호: ");
-		
-		for(int z=0; z<getLotto.length;z++) {
-			System.out.print(getLotto[z]+" ");
-		}
+		scanStr.close(); //
 		
 	} //public static void main
 } //class

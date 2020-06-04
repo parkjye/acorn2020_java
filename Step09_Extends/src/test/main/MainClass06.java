@@ -9,8 +9,8 @@ public class MainClass06 {
 		p1.mobileCall();
 		
 		//@Override
-		p1.Call(); 
 		p1.takePicture();
+		p1.Call();
 	}
 
 }

@@ -27,6 +27,8 @@ public class MainClass10 {
 			 * 아무거나 하나 읽어서 점수를 얻어낸다.
 			 * */
 			
+			//dummy 배열 > int배열에 넣기
+			
 			//int point = points[dummy[0]]; //change to int;
 			//System.out.println(point+"점 입니다.");
 			

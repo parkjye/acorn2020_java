@@ -34,7 +34,6 @@ public class MainClass01 {
 		p8.Call();
 		p8.mobileCall();
 		
-		
 		//이미 만들어진 객체의 참조값을 다른 type으로 받아보기
 		/*	같은 참조값(id)을 가지고 있지만,
 		 *  객체를 받은 type에 따라 사용할 수 있는 필드, 메소드가 다르다.(like 사용설명서)

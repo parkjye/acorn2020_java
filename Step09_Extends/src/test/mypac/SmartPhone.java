@@ -1,6 +1,6 @@
 package test.mypac;
 
-public class SmartPhone extends HandPhone{
+public class SmartPhone extends HandPhone{ //MainClass01
 	public SmartPhone() {
 		System.out.println("SmartPhone() 생성자 호출");
 	}

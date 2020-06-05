@@ -1,7 +1,7 @@
 package test.mypac;
 
 // Phone 클래스를 상속받은 HandPhone클래스
-public class HandPhone extends Phone{
+public class HandPhone extends Phone{ //MainClass01
 	public HandPhone() {
 		System.out.println("HandPhone() 생성자 호출");
 	}

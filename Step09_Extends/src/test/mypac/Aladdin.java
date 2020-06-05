@@ -1,6 +1,6 @@
 package test.mypac;
 
-public class Aladdin extends WaltDisney{
+public class Aladdin extends WaltDisney{ //MainClass00	
 
 	//생성자. WaltDisney Class 상속받음
 	public Aladdin(String userName, String movieName, int runningTime) {

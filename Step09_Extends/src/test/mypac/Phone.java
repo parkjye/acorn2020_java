@@ -1,6 +1,6 @@
 package test.mypac;
 
-public class Phone extends Object{ //MainClass01
+public class Phone extends Object{ //MainClass01 ~ MainClass07
 	//extends Object는 생략가능. 모든 class는 object클래스를 자동으로 상속받는다.
 
 	public Phone() {

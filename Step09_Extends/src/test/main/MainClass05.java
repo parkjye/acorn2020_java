@@ -10,7 +10,7 @@ public class MainClass05 {
 		//Q. p1에 들어있는  참조값을  이용해서 전화를 건다면
 		p1.Call();
 		
-		//p1에 들어있는 참조값을 이용해서 이동 중에 전화를 걸고 싶다면
+		//p1에 들어있는 참조값을 이용해서 이동 중에 전화를 걸고 싶다면,
 		//p1에 들어있는 참조값을 HandPhone type 지역변수에 casting해서 담는다 
 		HandPhone p2 = (HandPhone)p1;
 		p2.mobileCall();

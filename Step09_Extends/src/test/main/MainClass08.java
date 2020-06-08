@@ -19,10 +19,9 @@ public class MainClass08 {
 		t3.drive();
 		
 		Jeep j1 = new Jeep(new Engine());
-		j1.load("붕붕아");
+		j1.load("붕붕");
 		j1.off();
-		System.out.println(j1.dayOff(7, 1)+"일에 연차낼게요");
-
+		System.out.println(j1.dayOff(7)+"일에 연차낼게요"); 
 
 	}
 }

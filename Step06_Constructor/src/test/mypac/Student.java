@@ -11,7 +11,7 @@
 
 package test.mypac;
 
-public class Student {
+public class Student { //MainClass01
 	
 	//생성자: 객체가 호출될 때 실행 new Student();
 	public Student() {

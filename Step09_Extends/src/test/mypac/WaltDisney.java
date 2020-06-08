@@ -1,6 +1,6 @@
 package test.mypac;
 
-public class WaltDisney { //MainClass00	
+public class WaltDisney { //MainClass00
 	//필드
 	public String userName;
 	

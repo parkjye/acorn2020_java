@@ -12,7 +12,12 @@ public class MainClass03 {
 		 */
 		SmartPhone p2 = (SmartPhone)p1;
 		p2.doInternet(); 
-		//실행 시 `Class Cast Exception` 발생. 
-		//HandPhone p1의 하위 Class = SmartPhone이기 때문에 사용 못함
+		/*
+		 * SmartPhone p2 = p1;
+		 * HandPhone객체를 형변환없이 p2에 담게되면, `Class Cast Exception` 발생.
+		 * HandPhone p1의 하위 Class = SmartPhone이기 때문에 사용 못함
+		 * (부모 클래스는 자식 클래스의 자원 사용 X)
+		 * */
+		
 	}
 }

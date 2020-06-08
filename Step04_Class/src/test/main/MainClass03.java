@@ -42,8 +42,11 @@ public class MainClass03 {
 		//클래스명(MyUtil)과 함께 Static영역에 올라감
 		//MyUril 클래스의 send() static 메소드 호출
 		MyUtil.send();
-		
 		YourUtil.up();
+		
+		//static field에 값 넣기
+		MyUtil.version = "10.1";
+		System.out.println(MyUtil.version);
 		
 	}
 }

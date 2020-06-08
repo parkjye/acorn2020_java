@@ -1,6 +1,6 @@
 package test.mypac;
 
-public class Computer {
+public class Computer { //MainClass03, MainClass07
 	//필드
 	public Cpu cpu;
 	

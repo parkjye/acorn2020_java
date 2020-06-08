@@ -1,6 +1,6 @@
 package test.mypac;
 
-public class Car {
+public class Car { //MainClass02
 	//필드
 	public String name;
 	

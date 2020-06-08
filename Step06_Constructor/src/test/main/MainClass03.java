@@ -11,5 +11,9 @@ public class MainClass03 {
 		
 		Computer c2 = new Computer(null);
 		c2.doGame();
+		
+		//기본 생성자 호출
+		Computer c3 = new Computer();
+		c3.doGame();
 	}
 }

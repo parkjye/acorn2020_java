@@ -8,16 +8,19 @@ public class Jeep extends Car{
 	
 	//메소드
 	public void load(String str){
-		System.out.println(str+" 오프로드 하고싶다");
+		System.out.println(str+"이(가) 산을 달려요");
 	}
 	
 	public void off() {
 		System.out.println("하산할게요");
 	}
 	
-	public int dayOff(int mm, int dd) {
-		int sum = mm + dd;
-		return sum;
+	public int dayOff(int dd) {
+		return dd;
+	}
+	
+	public int Booking(int d) {
+		return d;
 	}
 
 }

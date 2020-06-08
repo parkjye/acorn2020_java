@@ -1,5 +1,6 @@
 package test.main;
-import test.mypac.*;
+import test.mypac.Computer;
+import test.mypac.Cpu;
 
 public class MainClass07 {
 	public static void main(String[] args) {

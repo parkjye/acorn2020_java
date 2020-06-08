@@ -11,4 +11,5 @@ public abstract class Weapon {
 	
 	//미완성 된 추상메소드를 만들 때는 abstract 예약어를 붙여서 메소드를 정의한다.
 	public abstract void attack(); 
+	
 }

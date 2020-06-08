@@ -17,10 +17,10 @@ public class MainClass01 {
 		boolean[] truth= {true, false, false, true, true};
 		
 		//참조 데이터 type이 들어있는 배열
-		String[] names= {"김구라", "해골", "원숭이", "주뎅이","덩어리"};
+		String[] names= {"김구라", "해골", "원숭이", "주뎅이", "덩어리"};
 		
 		//배열의 각 방 참조하기
-		int resurt=nums[0];
+		int result=nums[0];
 		double result2=num2[1];
 		boolean result3=truth[2];
 		String result4=names[3];
@@ -29,5 +29,6 @@ public class MainClass01 {
 		//배열 객체의 메소드와 필드 사용하기
 		int[] cloned = nums.clone();
 		int size=nums.length; 
+
 	}
 }

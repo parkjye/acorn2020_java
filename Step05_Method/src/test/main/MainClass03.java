@@ -1,6 +1,7 @@
 package test.main;
 
-import test.mypac.*;
+import test.mypac.Car;
+import test.mypac.MyObject;
 
 public class MainClass03 {
 	public static void main(String[] args) {

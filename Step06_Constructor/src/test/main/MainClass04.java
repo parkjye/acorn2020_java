@@ -19,8 +19,6 @@ public class MainClass04 {
 		/*
 		 * Q2. 원하는 범위 내에서 정수값을 얻어서 콘솔창에 출력
 		 * 		( 범위: 1~45 ) 
-		 * 		로또 각... 중복숫자제거, 배열, for(배열인덱스5까지) if return,
-		 * 	int arr = []; 0-5,  
 		 * */
 
 		int getLotto = r1.nextInt(45)+1; //nextInt(45) 0~44

@@ -13,7 +13,6 @@ public class MainClass01 {
 		
 		useRemocon(r1);
 		useRemocon(r2);
-		
 	}
 	
 	public static void useRemocon(Remocon r) {

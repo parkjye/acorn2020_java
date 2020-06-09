@@ -4,7 +4,7 @@ package test.mypac;
  * 
  * - 생성자가 없다. (단독 객체 생성 불가)
  * 
- * - 추상 method만 가질 수 있다. (구현된 메소드는 불가)
+ * - 추상 메소드만 가질 수 있다. (구현된 메소드는 불가)
  * 		abstract 예약어 생략가능.
  * 
  * - 필드는 static final 상수만 가질 수 있다.
@@ -20,6 +20,10 @@ package test.mypac;
  * 
  * 		class A implements B {}
  * 		class A implements B, C {}
+ * 		
+ * 		public A extends B implements C, D { ... }
+ * 			A a = new A();
+ * 			B, C, D ... type객체를 생성할 수 있다.
  *   
  * */
 public interface Remocon {

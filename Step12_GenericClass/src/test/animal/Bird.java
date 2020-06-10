@@ -1,5 +1,5 @@
 package test.animal;
 
-public class Elephont {
+public class Bird {
 
 }

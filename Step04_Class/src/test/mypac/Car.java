@@ -1,3 +1,4 @@
+package test.mypac;
 /*
  *  [ 클래스의 용도 ]
  *  
@@ -16,8 +17,6 @@
  *  3-1. 클래스명(Class Name)이 같아도 패키지명(Package)이 상이하면 다른 클래스이다.
  *  
  * */
-
-package test.mypac;
 public class Car { //설계도
 	//자동차의 이름을 저장할 필드
 	public String name;

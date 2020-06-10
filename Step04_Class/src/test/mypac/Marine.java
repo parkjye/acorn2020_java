@@ -1,3 +1,4 @@
+package test.mypac;
 /*
  * [ 접근 지정자 ]
  * 
@@ -11,8 +12,6 @@
  * 		- package가 다르면 import도 불가능
  * 
  * */
-
-package test.mypac;
 public class Marine {
 	//공격력을 저장하고 있는 static 필드
 	public static int attackPower=6; //static영역

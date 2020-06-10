@@ -45,7 +45,7 @@ public class MainClass07 {
 		//참조 테스트
 		List<MemberDto> a = mList;
 		
-		MemberDto b=mList.get(0);
+		MemberDto b = mList.get(0);
 		
 		int c = mList.get(0).getNum();
 		

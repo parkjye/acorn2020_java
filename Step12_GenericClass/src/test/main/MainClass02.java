@@ -14,7 +14,6 @@ public class MainClass02 {
 		
 		//객체를 바로 생성해서 사용할 때는 객체에 type명시 必
 		new FruitBox<Apple>().push(new Apple());
-		
-		
+				
 	}
 }

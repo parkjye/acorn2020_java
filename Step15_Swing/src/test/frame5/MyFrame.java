@@ -44,7 +44,7 @@ public class MyFrame extends JFrame{
 			}
 		};
 		
-		//lamda식 활용(오버라이드할 메소드가 한 개라서 가능
+		//lamda식 활용(오버라이드할 메소드가 한 개라서 가능)
 		ActionListener listener3 = (e)->{
 			JOptionPane.showMessageDialog(MyFrame.this, "추가합니다!");
 		};

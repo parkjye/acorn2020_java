@@ -1,22 +1,12 @@
 package test.frame11;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 
-import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JList;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 
 public class MyFrame extends JFrame implements ActionListener {
@@ -107,58 +97,57 @@ public class MyFrame extends JFrame implements ActionListener {
 	//ActionListener 인터페이스를 구현해서 강제 오버라이드된 메소드
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		//JTextField 텍스트 받을거
-		String strNum1 = fiedlNum1.getText();
-		String strNum2 = fiedlNum2.getText();
-		
-		//String > double 형변환
-		double num1 = Double.parseDouble(strNum1);
-		double num2 = Double.parseDouble(strNum2);
-		
-		//double to String전용 임시지역변수
-		double temp = 0;
-		
-		//사칙연산 버튼 커멘드
-		String command = e.getActionCommand();
-		
 		//예외처리
 		try { 
+			//JTextField 텍스트 받을거
+			String strNum1 = fiedlNum1.getText();
+			String strNum2 = fiedlNum2.getText();
+			
+			//String > double 형변환
+			double num1 = Double.parseDouble(strNum1);
+			double num2 = Double.parseDouble(strNum2);
+			
+			//double to String전용 임시지역변수
+			double temp = 0;
+			
+			//사칙연산 버튼 커멘드
+			String command = e.getActionCommand();
+
 			//계산
 			if(command.equals(COMMAND_PLUS)) { //덧셈
 				temp = num1+num2;
 				result = Double.toString(temp);
-				setText();
+				getResult();
 				return;
 			}else if(command.equals(COMMAND_MINUS)) { //뺄셈
 				temp = num1-num2;
 				result = Double.toString(temp);
-				setText();
+				getResult();
 				return;
 			}else if(command.equals(COMMAND_MULTIPL)) { //곱셈
 				temp = num1*num2;
 				result = Double.toString(Math.round(temp*100)/100.0);
-				setText();
+				getResult();
 				return;
 			}else if(command.equals(COMMAND_DIVIDE)) { //나눗셈
 				temp = num1/num2;
 				result = Double.toString(Math.round(temp*100)/100.0);
-				setText();
+				getResult();
 				return;
-			} 
+			} //else if
+			
 		} catch(NumberFormatException nfe) {
-			System.out.println("숫자만 입력하세요.");
+			resultLab.setText("숫자만 입력하세요.");
 			nfe.printStackTrace();
-		}
-		finally {
+		} finally {
 			fiedlNum1.setText("");
 			fiedlNum2.setText("");
-			System.out.println("계산기 종료");
 		}
 
 	}//actionPerformed
 
 	//연산 결과 resultLab 추가 & fiedlNum들 값 지우기
-	public void setText() {
+	public void getResult() {
 		resultLab.setText(result);
 		fiedlNum1.setText("");
 		fiedlNum2.setText("");

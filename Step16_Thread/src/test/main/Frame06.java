@@ -8,10 +8,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-import test.mypac.CountRunnable;
 import test.mypac.CountThread;
 
 
@@ -32,12 +30,12 @@ public class Frame06 extends JFrame implements ActionListener{
 		JButton countBtn = new JButton("1~10까지 세기");
 		panel.add(countBtn);
 		
-		//JLabel
-		label_result = new JLabel();
-		panel.add(label_result);
-		
 		//버튼에 리스너 등록하기
 		countBtn.addActionListener(this);
+		
+		//JLabel
+		label_result = new JLabel("label_result");
+		panel.add(label_result);
 		
 		//innerClass안에서 필드 값 사용하기
 		class CountThread extends Thread{
@@ -74,7 +72,7 @@ public class Frame06 extends JFrame implements ActionListener{
 		Frame03 frame = new Frame03();
 		
 		//프레임의 제목 설정
-		frame.setTitle("Frame01");
+		frame.setTitle("Frame06");
 		
 		//프레임을 닫으면 자동으로 프로세스가 종료 되도록 한다.
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

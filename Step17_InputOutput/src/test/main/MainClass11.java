@@ -16,7 +16,7 @@ public class MainClass11 {
 		for(File temp:files) {
 			temp.delete();
 		}
-		System.out.println("C:\\\\acorn2020\\\\myFolder 안에 있는 내용을 모두 삭제 했습니다.");
+		System.out.println("C:\\acorn2020\\myFolder 안에 있는 내용을 모두 삭제 했습니다.");
 		
 	}//main
 }//MainClass11

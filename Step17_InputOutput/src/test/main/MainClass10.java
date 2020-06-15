@@ -15,6 +15,6 @@ public class MainClass10 {
 			f2.mkdir();
 			System.out.println(i+"번째 디렉토리를 만들었습니다.");
 		}
-		System.out.println("총 "+(i+1)+"개의 디렉토리를 만들었습니다.");
+		System.out.println("총 "+i+"개의 디렉토리를 만들었습니다.");
 	}
 }

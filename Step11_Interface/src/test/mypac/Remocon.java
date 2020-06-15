@@ -12,7 +12,7 @@ package test.mypac;
  * 
  * - data type의 역할을 할 수 있다.
  * 
- * - interace type의 참조값이 필요하면 구현(implement) 클래스를 만들어서
+ * - interface type의 참조값이 필요하면 구현(implement) 클래스를 만들어서
  * 		객체를 생성해야 한다.
  * 
  * - 클래스 상속은 단일 상속이지만, 인터페이스는 다중 구현이 가능하다.
@@ -26,7 +26,7 @@ package test.mypac;
  * 			B, C, D ... type객체를 생성할 수 있다.
  *   
  * */
-public interface Remocon {
+public interface Remocon { //MainClass01 ~ 03
 	//필드 (static 예약어 생략가능)
 //	public *static* final String COMPANY="LG";
 	public final String COMPANY="LG";

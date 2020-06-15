@@ -63,13 +63,6 @@ public class MyFrame extends JFrame implements ActionListener {
 		symbolEqual = new JLabel("=");
 		resultLab = new JLabel("0");
 		
-//		removeBtn = new JButton("삭제");
-//		removeBtn.setActionCommand(COMMAND_REMOVE);
-//		removeBtn.addActionListener(this);
-		
-		//위치잡기
-//		add(removeBtn);
-		
 		add(fiedlNum1);
 		
 		add(plus);
@@ -90,7 +83,7 @@ public class MyFrame extends JFrame implements ActionListener {
 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		frame.setBounds(100,100,500,500);
+		frame.setBounds(100,100,800,500);
 		frame.setVisible(true);	
 	} //main
 	
@@ -139,9 +132,6 @@ public class MyFrame extends JFrame implements ActionListener {
 		} catch(NumberFormatException nfe) {
 			resultLab.setText("숫자만 입력하세요.");
 			nfe.printStackTrace();
-		} catch(Exception ex) {
-			resultLab.setText("계산기를 종료합니다.");
-			ex.printStackTrace();
 		} finally {
 			fiedlNum1.setText("");
 			fiedlNum2.setText("");
@@ -155,5 +145,5 @@ public class MyFrame extends JFrame implements ActionListener {
 		fiedlNum1.setText("");
 		fiedlNum2.setText("");
 	}
-
 }//Class
+

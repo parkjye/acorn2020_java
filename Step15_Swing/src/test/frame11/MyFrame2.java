@@ -86,7 +86,7 @@ public class MyFrame2 extends JFrame implements ActionListener {
 			//연산의 결과값을 담을 지역변수
 			double result = 0;
 			
-			//눌러진 버튼의 command 읽어오기
+			//눌러진 버튼의 command 읽어오기(여러개의 버튼 구분을 위해서)
 			String command = e.getActionCommand();
 			
 			if(command.equals("plus")) {

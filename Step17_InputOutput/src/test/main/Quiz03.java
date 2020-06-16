@@ -45,6 +45,12 @@ public class Quiz03 extends JFrame implements ActionListener{
 		item_new.setActionCommand("new");
 		item_new.addActionListener(this);
 		
+		item_open.setActionCommand("open");
+		item_open.addActionListener(this);
+		
+		item_save.setActionCommand("save");
+		item_save.addActionListener(this);
+		
 		//메뉴에 아이템 추가
 		JMenu menu1 = new JMenu("File");
 		menu1.add(item_new);
@@ -63,7 +69,7 @@ public class Quiz03 extends JFrame implements ActionListener{
 		area.setBackground(Color.ORANGE);
 		area.setVisible(false);
 		
-		JFrame jframe = new JFrame();
+//		JFrame jframe = new JFrame();
 		 
 	}
 	

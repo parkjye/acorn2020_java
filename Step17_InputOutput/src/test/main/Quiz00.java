@@ -26,9 +26,9 @@ public class Quiz00 extends JFrame implements ActionListener{
 		this.setTitle("파일");
 		setLayout(new BorderLayout());
 		
-		JMenuItem item_new = new JMenuItem("New");
-		JMenuItem item_open = new JMenuItem("Open");
-		JMenuItem item_save = new JMenuItem("Sava");
+		JMenuItem item_new = new JMenuItem("새 파일");
+		JMenuItem item_open = new JMenuItem("열기");
+		JMenuItem item_save = new JMenuItem("저장");
 		
 		item_new.setActionCommand(FILE_NEW);
 		item_new.addActionListener(this);
@@ -45,13 +45,15 @@ public class Quiz00 extends JFrame implements ActionListener{
 		menu1.add(item_save);
 		
 		JMenuBar bar = new JMenuBar();
+		bar.setOpaque(true);
+		bar.setBackground(Color.ORANGE);
 		bar.add(menu1);
 		
 		setJMenuBar(bar);
 		
 		textArea = new JTextArea();
 		add(textArea, BorderLayout.CENTER);
-		textArea.setBackground(Color.GREEN);
+		textArea.setBackground(Color.LIGHT_GRAY);
 		textArea.setVisible(false);
 	}
 	

@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 public class MyFrame extends JFrame implements ActionListener, KeyListener{
-	//
+	//필드
 	JTextField inputMsg;
 	JButton sendBtn;
 	JButton removeBtn;

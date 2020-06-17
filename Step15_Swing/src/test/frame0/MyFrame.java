@@ -9,8 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 
 public class MyFrame extends JFrame{
-	//
-	
+
 	//생성자
 	public MyFrame() {
 		setLayout(new FlowLayout());

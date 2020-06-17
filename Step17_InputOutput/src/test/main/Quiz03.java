@@ -111,7 +111,7 @@ public class Quiz03 extends JFrame implements ActionListener{
 		
 	}//actionPerformed
 	
-	//새 창 
+	//새파일
 	public void newContent() {
 		area.setText("");
 		area.setVisible(true);
@@ -176,7 +176,8 @@ public class Quiz03 extends JFrame implements ActionListener{
 					area.append("\r\n");
 				}
 				area.setVisible(true);
-				br.close();
+				br.close(); //버퍼리더 close() 해줘야함
+				
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

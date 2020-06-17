@@ -18,9 +18,7 @@ public class MainClass01 {
 		btn.setBounds(10, 10, 100, 40);
 		//프레임에 버튼 추가하기
 		f.add(btn);
-		
-		
-	
+
 		new MyFrame("나만의 프레임");
 	}//main
 	

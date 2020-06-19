@@ -1,6 +1,9 @@
 package example5;
 
 import java.util.List;
+
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -17,6 +20,7 @@ public class ServerMain {
 	static List<ServerThread> threadList = new ArrayList<>();
 	
 	public static void main(String[] args) {
+		
 		//필요한 객체를 저장할 지역변수 미리 만들기
 		ServerSocket serverSocket=null;
 		
@@ -25,10 +29,8 @@ public class ServerMain {
 			serverSocket = new ServerSocket(5050);
 			
 			while(true) {
-				System.out.println("클라이언트의 Socket 연결을 대기합니다.");
-				
+				//클라이언트의 소켓 접속을 기다린다.
 				Socket socket=serverSocket.accept();
-				System.out.println("클라이언트가 접속을 했습니다.");
 				
 				//방금 접속한 클라이언트를 응대할 스레드를 시작시킨다.
 				ServerThread thread = new ServerThread(socket);
@@ -56,8 +58,13 @@ public class ServerMain {
 	public static class ServerThread extends Thread{
 		//필드
 		Socket socket;
+		
 		//클라이언트에게 문자열을 출력할 수 있는 객체
 		BufferedWriter bw;
+		
+		//
+		String chatName;
+		
 		
 		//생성자의 인자로 Socket객체를 전달받도록 한다.
 		public ServerThread(Socket socket) {
@@ -94,20 +101,22 @@ public class ServerMain {
 				//BufferedWriter 객체의 참조값을 필드에 저장하기
 				bw = new BufferedWriter(osw);
 				
-				while(true) {
-					/*
-					 * 클라이언트가 문자열을 한 줄(개행기호와 함께) 보내면
-					 * readLine() 메소드가 리턴하면서 보낸 문자열을 가지고 온다.
-					 * 
-					 * 보내지 않으면 계속 블로킹 되어서 대기하고 있다가
-					 * 접속이 끊기면 Exception이 발생하거나 혹은 null이 리턴된다.
-					 * 따라서 null이 리턴되면 반복문을 빠져 나가게 break문을 만나도록 한다.
-					 *  
-					 * 실행순서가 try블록을 벗어나면 run()메소드가 리턴하게 되고
-					 * run()메소드가 리턴되면 해당 스레드는 종료가 된다.
-					 * */
+				while(true) {	
+					//클라이언트가 전송하는 문자열을 읽어낸다.
 					String msg = br.readLine();
-					System.out.println("메세지: "+msg);
+					
+					//전송된 JSON문자열을 사용할 준비를 한다.
+					JSONObject jsonObj = new JSONObject(msg);
+					
+					//type을 읽어낸다.
+					String type = jsonObj.getString("type");			
+					if(type.equals("enter")) {
+						//현재 스레드가 대응하는 클라이언트의 대화명을 필드에 저장
+						String chatName=jsonObj.getString("name");
+						this.chatName=chatName;
+					}else if(type.equals("msg")) {
+						
+					}
 					
 					//클라이언트에게 동일한 메시지를 보내는 메소드를 호출한다.
 					sendMessage(msg);
@@ -119,7 +128,14 @@ public class ServerMain {
 			}finally {
 				//접속이 끊겨서 종료되는 스레드는 List에서 제거한다.
 				threadList.remove(this);
+				//this가 퇴장한다고 메세지를 보낸다.
+						
 				try {
+					JSONObject jsonObj = new JSONObject();
+					jsonObj.put("type", "out");
+					jsonObj.put("name", this.chatName);
+					sendMessage(jsonObj.toString());
+					
 					if(socket!=null)socket.close();
 				}catch(Exception e) {}
 			}

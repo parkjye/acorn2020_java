@@ -2,7 +2,7 @@ package test.mypac;
 
 public class ToyRobot implements Toy{ //MainClass02
 	
-	//2-2. (ToyAirplane class의 메소드와 비교)
+	// 2-1. (ToyAirplane class의 메소드와 비교)
 	// 동일한 Interface에 있는 메소드지만,
 	// 객체에 따라 메소드를 별도로 구현을 할 수 있다. 
 	

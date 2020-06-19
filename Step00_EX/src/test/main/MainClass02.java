@@ -7,6 +7,7 @@ import test.mypac.ToyRobot;
 public class MainClass02 {
 	public static void main(String[] args) {
 		
+		//3. MainClass에서 호출		
 		//동일한 type으로 객체 생성이 되서
 		Toy robot = new ToyRobot();
 		Toy airplane = new ToyAirplane();

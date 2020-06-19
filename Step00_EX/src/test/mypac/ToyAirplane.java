@@ -2,7 +2,7 @@ package test.mypac;
 
 public class ToyAirplane implements Toy{ //MainClass02
 
-	// 2. Toy 인터페이스에 있던 메소드를 여기서 구현. 
+	// 2. class를 생성해서 인터페이스(Toy)에 있는 메소드를 여기서 구현. 
 	
 	@Override
 	public void walk() {

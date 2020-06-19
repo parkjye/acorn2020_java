@@ -2,6 +2,7 @@ package example5;
 
 import java.util.List;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -81,6 +82,27 @@ public class ServerMain {
 				tmp.bw.flush(); //방출
 			}
 		}
+		//참여자 목록을 얻어내서 Client에게 출력해주는 메소드
+		public void sendChatNameList() {
+			JSONObject jsonObj = new JSONObject();
+			JSONArray jsonArr = new JSONArray();
+			
+			for(int i=0; i<threadList.size(); i++) {
+				ServerThread tmp = threadList.get(i);
+				jsonArr.put(i, tmp.chatName);
+			}
+			
+			jsonObj.put("type", "members");
+			jsonObj.put("list", jsonArr);
+			
+			try {
+				sendMessage(jsonObj.toString());
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
 
 		//새로운 작업단위가 시작되는 run() 메소드
 		@Override
@@ -114,8 +136,8 @@ public class ServerMain {
 						//현재 스레드가 대응하는 클라이언트의 대화명을 필드에 저장
 						String chatName=jsonObj.getString("name");
 						this.chatName=chatName;
-					}else if(type.equals("msg")) {
-						
+						//대화명 목록을 보내준다.
+						sendChatNameList();
 					}
 					
 					//클라이언트에게 동일한 메시지를 보내는 메소드를 호출한다.
@@ -135,6 +157,7 @@ public class ServerMain {
 					jsonObj.put("type", "out");
 					jsonObj.put("name", this.chatName);
 					sendMessage(jsonObj.toString());
+					sendChatNameList();
 					
 					if(socket!=null)socket.close();
 				}catch(Exception e) {}

@@ -40,8 +40,7 @@ public class MainClass01 {
 		ResultSet rs = null;
 		try {
 			//실행할 sql문 (문법 오류 주의)
-			String sql = "SELECT num,name,addr FROM member "
-					+ " ORDER BY num ASC";
+			String sql = "SELECT deptno,ename,job FROM emp";
 			
 			//PreparedStatement 객체의 참조값 얻어오기
 			pstmt=conn.prepareStatement(sql);
@@ -51,12 +50,12 @@ public class MainClass01 {
 			rs=pstmt.executeQuery();
 			
 			while(rs.next()) {
-				int num = rs.getInt("num");
-				String name=rs.getString("name");
-				String addr=rs.getString("addr");
+				int deptno=rs.getInt("deptno");
+				String ename=rs.getString("ename");
+				String job=rs.getString("job");
 				
 				//출력하기
-				System.out.println(num+" | "+name+" | "+addr);
+				System.out.println(deptno+" | "+ename+" | "+job);
 			}
 			
 		}catch(Exception e) {

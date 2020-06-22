@@ -47,7 +47,13 @@ public class MainClass01 {
 			
 			//PreparedStatement 객체를 이용해서 query문 수행하고 결과를
 			//ResultSet 객체로 받아오기
+			
+			//리턴 값이 필요한 쿼리문일 때 사용(select 등)
 			rs=pstmt.executeQuery();
+			
+			// 리턴 값이 필요 없는 쿼리문일 때 사용(insert, update, delete등)
+			// rs=pstmt.executeUpdate();
+			
 			
 			while(rs.next()) {
 				int deptno=rs.getInt("deptno");

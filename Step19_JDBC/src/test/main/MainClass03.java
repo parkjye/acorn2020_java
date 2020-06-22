@@ -49,7 +49,7 @@ public class MainClass03 {
 			// ? 에 값을 바인딩해서 미완성된 sql문을 완성 시킨다.
 			pstmt.setString(1, name);
 			pstmt.setString(2, addr);
-			
+						
 			//실제로 수행하기
 			pstmt.executeUpdate();
 			

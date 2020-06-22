@@ -29,13 +29,14 @@ public class MainClass07 {
 			conn = new DBConnect().getConn();
 			
 			//실행할 sql문
-			String sql="select * from member";
+			String sql="select * from member order by num ASC";
 			pstmt=conn.prepareStatement(sql);
 			
 			//query문 수행하고 결과 얻어오기
 			rs=pstmt.executeQuery();
 			
 			//반복문 돌면서 select된 회원정보 읽어오기
+			//rs.next()는 boolean을 리턴하는데 다음 데이터가 존재하면 true를 반환한다.
 			while(rs.next()) {
 				//회원 정보를 리스트에 담는다.
 				int num=rs.getInt("num");
@@ -50,17 +51,29 @@ public class MainClass07 {
 				
 				//MemberDto 객체를 List에 누적시킨다.
 				list.add(dto);
+
 			}
-			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally{
 			try {
+				//객체를 사용했던 역순으로 닫아준다.
+				if(rs!=null)rs.close();
 				if(pstmt!=null)pstmt.close();
 				if(conn!=null)conn.close();
 			}catch(Exception e) {
 				e.printStackTrace();
 			}
 		}
+		//아래의 static 메소드 호출하기
+		printMember(list);
+	}//main
+	
+	//회원 목록을 콘솔창에 출력해주는 메소드
+	public static void printMember(List<MemberDto> list) {
+		for(MemberDto tmp:list) {
+			System.out.println(tmp.getNum()+" | "+tmp.getName()+" | "+tmp.getAddr());
+		}
 	}
-}
+	
+}//MainClass07

@@ -17,6 +17,8 @@ public class MainClass00 {
 		 *  [ cafe ]
 		 *  num(pk) / menu / price / cafename
 		 *  
+		 *  data 입력(수업시간에 했던 방법 +스캐너(+while) 가능?)
+		 *  
 		 * */
 		
 		//DB와 연결하는 객체 생성, 메소드 호출

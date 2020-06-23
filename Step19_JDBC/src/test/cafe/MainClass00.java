@@ -14,14 +14,20 @@ public class MainClass00 {
 		 *	price number,
 		 *	cafename varchar2(20));
 		 *
+		 *	데이터 추가 (insert into)
+		 *		MainClass01, MainClass03.
 		 *
-		 *	MainClass01. 데이터 추가 (insert into)
-		 *	MainClass02. 데이터 수정 (update ~ set)
-		 *
-		 *
-		 *	+@
-		 *  (01) 수업시간에 했던 방법 +스캐너(+while) 가능?)
+		 *	데이터 수정 (update ~ set)
+		 *		MainClass02
 		 *  
+		 *  데이터 삭제 (delete from ~ where)
+		 *  	MainClass04
+		 *  
+		 *  CafeDto, cafeDao 활용
+		 *  	MainClass05
+		 *  
+		 *  Scanner를 이용해서 data 작업
+		 *  	MainClass06
 		 * */
 		
 	}//main

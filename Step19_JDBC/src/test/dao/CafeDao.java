@@ -6,4 +6,16 @@ public class CafeDao {
 	
 	//생성자
 	private CafeDao() {} 
+	
+	//참조값 리턴
+	public static CafeDao getInstance() {
+		if(dao == null) {
+			dao = new CafeDao();
+		}
+		return dao;
+	}
+	
+	//메소드
+ 
+	
 }

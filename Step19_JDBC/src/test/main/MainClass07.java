@@ -74,6 +74,10 @@ public class MainClass07 {
 		for(MemberDto tmp:list) {
 			System.out.println(tmp.getNum()+" | "+tmp.getName()+" | "+tmp.getAddr());
 		}
+		
+		for(int i=0; i<list.size(); i++) {
+			list.get(i).getNum();
+		}
 	}
 	
 }//MainClass07

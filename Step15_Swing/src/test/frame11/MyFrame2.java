@@ -62,7 +62,6 @@ public class MyFrame2 extends JFrame implements ActionListener {
 		miusBtn.setActionCommand("mius");
 		multiBtn.setActionCommand("multi");
 		divideBtn.setActionCommand("divide");
-	
 	}
 	
 	public static void main(String[] args) {

@@ -3,6 +3,10 @@ package test.frame;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.util.List;
 
 import javax.swing.JButton;
@@ -18,7 +22,7 @@ import javax.swing.table.DefaultTableModel;
 import test.dao.MemberDao;
 import test.dto.MemberDto;
 
-public class MemberFrame extends JFrame implements ActionListener{
+public class MemberFrame extends JFrame implements ActionListener, PropertyChangeListener{
 	//필드
 	JTextField inputAddr, inputName;
 	JButton saveBtn, deleteBtn;
@@ -64,7 +68,18 @@ public class MemberFrame extends JFrame implements ActionListener{
 		String[] colNames = {"번호", "이름", "주소"};
 		
 		//테이블에 출력할 정보를 가지고 있는 모델 객체
-		model = new DefaultTableModel(colNames,0);
+		model = new DefaultTableModel(colNames,0) {
+			
+			//인자로 전달되는 행(row), 열(column)수정 가능 여부를 리턴하는 메소드
+			@Override
+			public boolean isCellEditable(int row, int column) {
+				//if 첫번째(0번째) 칼럼이면 수정이 불가 하도록 한다.
+				if(column==0) {
+					return false;
+				}
+				return true;
+			}
+		};
 		
 		//모델을 테이블에 연결한다.
 		table.setModel(model);
@@ -75,14 +90,11 @@ public class MemberFrame extends JFrame implements ActionListener{
 		//JScrollPane을 프레임의 가운데에 배치하기
 		add(scroll, BorderLayout.CENTER);
 		
-		//JTable에 sample데이터 출력해보기
-//		Object[] row1 = {1, "김구라", "노량진"};
-//		Object[] row2 = {2, "해골", "행신동"};
-//		model.addRow(row1);
-//		model.addRow(row2);
-
+		//테이블에 회원목록 출력하기
 		displayMember();
 		
+		//테이블에서 발생하는 이벤트 리스너 등록하기
+		table.addPropertyChangeListener(this);
 	}//생성자 MemberFrame()
 	
 	public void displayMember() {
@@ -113,17 +125,28 @@ public class MemberFrame extends JFrame implements ActionListener{
 		MemberDto dto = new MemberDto();
 		
 		if(command.equals("save")) {
-			//
 			String getName = inputName.getText();
 			String getAddr = inputAddr.getText();
-			
+
 			dto.setName(getName);
 			dto.setAddr(getAddr);
+			
+			if(getName.equals("") || getAddr.equals("")) {
+				JOptionPane.showMessageDialog(this, "정보 누락");
+				inputName.setText("");
+				inputAddr.setText("");
+				return;
+			}
 			
 			boolean isSuccess = dao.insert(dto);
 			
 			if(isSuccess) {
 				JOptionPane.showMessageDialog(this, getName+"님의 정보가 추가 되었습니다.");
+				model.setRowCount(0);
+				displayMember();
+				inputName.setText("");
+				inputAddr.setText("");
+				return;
 			}else {
 				JOptionPane.showMessageDialog(this, "추가 실패");
 			}
@@ -133,21 +156,54 @@ public class MemberFrame extends JFrame implements ActionListener{
 			displayMember();
 
 		}else if(command.equals("delete")) {
-			
+
 			int selectedIndex=table.getSelectedRow();
-			
 			if(selectedIndex == -1) {
 				JOptionPane.showMessageDialog(this, "선택한 데이터가 없습니다.");
-			}else {
-				//model.getValueAt(selectedIndex, 0); == object type을 리턴하니까 캐스팅
-				int num = (int)model.getValueAt(selectedIndex, 0);
-				dao.delete(num);
-				
-				model.setRowCount(0);
-				displayMember();
+				return;
 			}
+			
+			//실제 삭제 할것인지 확인한다.
+			int selection = JOptionPane.showConfirmDialog(this, "선택된 row를 삭제하겠습니까?");
+			if(selection != JOptionPane.YES_OPTION) {
+				return;
+			}
+
+			//row 삭제
+			//model.getValueAt(selectedIndex, 0); == object type을 리턴하니까 캐스팅
+			int num = (int)model.getValueAt(selectedIndex, 0);
+			dao.delete(num);
+			
+			model.setRowCount(0);
+			displayMember();
 		}
 		
 	}//actionPerformed
+
+	//현재 테이블 cell의 수정여부를 저장할 필드
+	boolean isEditing = false;
+	
+	//propertyChange
+	@Override
+	public void propertyChange(PropertyChangeEvent evt) {
+		if(evt.getPropertyName().equals("tableCellEditor")) {
+			if(isEditing) { //수정중일때
+				
+				//변화된 값을 읽어와서 DB에 반영한다.
+				int selectedIndex=table.getSelectedRow();
+				int num=(int)model.getValueAt(selectedIndex, 0);
+				String name=(String)model.getValueAt(selectedIndex, 1);
+				String addr=(String)model.getValueAt(selectedIndex, 2);
+				
+				//수정할 회원의 정보를 MemberDto객체에 담고, DB에 저장하기
+				MemberDto dto = new MemberDto(num, name, addr);
+				MemberDao.getInstance().update(dto);
+				
+				isEditing=false; //수정중이 아니라고 표시한다.
+			}
+			isEditing=true;
+		}
+		
+	}
 	
 }//MemberFrame

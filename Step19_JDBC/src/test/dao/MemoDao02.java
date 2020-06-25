@@ -4,11 +4,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
 import java.util.ArrayList;
 import java.util.List;
-import test.dto.MemoDto;
-import test.dto.MemoDto02;
 import test.util.DBConnect;
+
+import test.dto.MemoDto02;
 
 public class MemoDao02 {
 	private static MemoDao02 dao;
@@ -48,8 +49,8 @@ public class MemoDao02 {
 			return isSucc;	
 	}
 	
-	public List<MemoDto> getList(){
-		List<MemoDto> result = new ArrayList<MemoDto>();
+	public List<MemoDto02> getList(){
+		List<MemoDto02> result = new ArrayList<MemoDto02>();
 		if(conn == null) return null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -63,7 +64,7 @@ public class MemoDao02 {
 			
 			while(rs.next())
 			{
-				MemoDto data = new MemoDto(rs.getInt("num"), rs.getString("content"), rs.getString("regdate"));
+				MemoDto02 data = new MemoDto02(rs.getInt("num"), rs.getString("content"), rs.getString("regdate"));
 				result.add(data);
 			}
 		}catch(Exception e)

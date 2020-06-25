@@ -23,7 +23,6 @@ import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 import test.dao.MemoDao02;
-import test.dto.MemoDto;
 import test.dto.MemoDto02;
 
 public class MemoFrame02 extends JFrame implements ActionListener,PropertyChangeListener,MouseListener{
@@ -205,12 +204,12 @@ public class MemoFrame02 extends JFrame implements ActionListener,PropertyChange
 	
 	public void redrawTable() {
 		myModel.setRowCount(0);
-		List<MemoDto> myList = myWork.getList();
+		List<MemoDto02> myList = myWork.getList();
 		if(myList == null) {
 			JOptionPane.showMessageDialog(this, "테이블 갱신에 실패했습니다.");
 			return;
 		}
-		for(MemoDto data : myList) {
+		for(MemoDto02 data : myList) {
 			Object[] rowData = {data.getNum(),data.getContent(),data.getRegdate()};
 			myModel.addRow(rowData);
 		}

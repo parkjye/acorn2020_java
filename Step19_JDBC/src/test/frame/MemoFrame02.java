@@ -157,20 +157,6 @@ public class MemoFrame02 extends JFrame implements ActionListener,PropertyChange
 	@Override
 	public void propertyChange(PropertyChangeEvent e) {
 		// TODO Auto-generated method stub
-//		System.out.println(e.getPropertyName());
-//		if(e.getPropertyName().equals("tableCellEditor")) {
-//			if(isEditing) { //수정이끝나면
-//				//변화된 값을 읽어와서 Db에 반영한다.
-//				int selectedIndex = myTable.getSelectedRow();
-//				int selectedNum = (int) myModel.getValueAt(selectedIndex,0);
-//				String selectedContent = (String) myModel.getValueAt(selectedIndex,1);
-//				String selectedRegdate = (String) myModel.getValueAt(selectedIndex,2);
-//				MemoDto02 dto = new MemoDto02(selectedNum,selectedContent,selectedRegdate);
-//				myWork.update(dto);
-//				isEditing = false;//수정중이 아니라고 표시한다.
-//			}
-//			isEditing = true;
-//		}
 	}
 	
 	final boolean STATE_SUCC = true;
